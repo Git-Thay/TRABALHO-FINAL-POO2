@@ -1,0 +1,38 @@
+ATIVAR O VENV ANTES DE EXECUTAR
+
+.\.venv\Scripts\Activate.ps1
+
+DEPOIS DE EXECUTAR ELE GERA UM LINK, USE O LINK /DOCS PARA ACESSAR NO NAVEGADOR E TESTAR A API
+
+## 📦 Dependências e Pré-requisitos
+
+Antes de rodar o projeto, certifique-se de ter o **Python 3.13** instalado. Como o projeto utiliza recursos modernos de validação e tipagem, é altamente recomendável utilizar esta versão ou superior.
+
+### 1. Ativação do Ambiente Virtual (Recomendado)
+Para evitar conflitos com pacotes globais do seu sistema, isole o ambiente antes de instalar as dependências:
+
+* **Windows (PowerShell):**
+  ```bash
+  .\.venv\Scripts\Activate.ps1
+
+* **Linux / macOS:**
+
+source .venv/bin/activate
+
+2. Instalação dos Pacotes
+Com o ambiente virtual ativo, execute o comando abaixo para instalar todas as dependências necessárias de uma só vez:
+pip install fastapi uvicorn pydantic twilio python-multipart --no-cache-dir
+
+
+3. Para rodar automaticamente sem precisar ativar o venv toda vez
+abrir o seletor usando um atalho de teclado:
+
+Pressione Ctrl + Shift + P juntas para abrir a barra de comandos no topo do VS Code.
+
+Digite Python: Select Interpreter (ou Python: Selecionar Interpretador) e aperte Enter.
+
+Escolha: Python 3.13.x ('.venv': venv)  - .\.venv\Scripts\python.exe
+
+ou algo semelhante 
+
+
