@@ -131,7 +131,7 @@ pytest -q
 
 ## Próximos passos sugeridos
 
-- Trocar `RepositorioContatos` em memória por SQLAlchemy/SQLite sem alterar o domínio.
-- Adicionar autenticação JWT nas rotas de cadastro.
-- Persistir o estado de emergência (resistir a restart do processo).
-- Em produção: migrar do Sandbox para um número WhatsApp Business aprovado.
+- Substituir o repositório de contatos em memória por uma implementação utilizando SQLAlchemy e SQLite, preservando a arquitetura e as regras de negócio da camada de domínio.
+- Implementar autenticação baseada em JWT (JSON Web Token) para proteger as rotas de cadastro e gerenciamento de contatos.
+- Adicionar persistência ao estado de emergência, garantindo a manutenção das informações mesmo após a reinicialização da aplicação.
+- Em ambiente de produção, substituir o Twilio Sandbox por um número oficial do WhatsApp Business, devidamente aprovado para uso.
