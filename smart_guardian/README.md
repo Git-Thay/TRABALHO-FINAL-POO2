@@ -71,16 +71,12 @@ TWILIO_PHONE_TO=whatsapp:+00000000000
 cp .env.example .env        # preencha as credenciais Twilio
 uvicorn app.main:app --reload
 ```
-### Instalação Manual das Dependências
-
-Caso precise forçar a instalação das bibliotecas do projeto, execute o comando abaixo no terminal:
-
-```bash
+pode ser necessario instalar as seguintes bibliotecas
 pip install fastapi uvicorn ultralytics python-multipart opencv-python-headless pydantic pydantic-settings python-dotenv apscheduler twilio requests pillow
 
 Abra o Swagger em **http://localhost:8000/docs**.
 
-> Se você não preencher as credenciais da Twilio, o sistema inicializará automaticamente com um canal fictício (*mock*), exibindo os alertas apenas nos logs do terminal.
+> Se você **não** preencher as credenciais Twilio, o sistema sobe com um canal **fake** (apenas loga as mensagens). Útil para desenvolver sem custo.
 
 ## Configurando o Twilio Sandbox (passo a passo)
 
