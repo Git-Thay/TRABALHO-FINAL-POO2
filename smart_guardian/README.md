@@ -43,88 +43,40 @@ smart_guardian
 ## Como rodar
 
 ```bash
-Criar o ambiente virtual
-
-```
+Criar o ambiente virtual:
 python -m venv .venv
-```
 
-Ativar o ambiente virtual
+Ativar o ambiente virtual:
+python -m venv .venv && source .venv/bin/activate   # Windows: .\.venv\Scripts\Activate.ps1
 
-```
-source .venv/bin/activate
-```
-
-> **Windows (PowerShell):**
->
-> ```
-> .\.venv\Scripts\Activate.ps1
-> ```
-
-Instalar as dependências do projeto
-
-```
+Instalar as dependências do projeto:
 pip install -r requirements.txt
-```
 
-Caso ocorra erro durante a instalação das dependências
-
-Atualizar o `pip`:
-
-```
+Caso ocorra erro durante a instalação das dependências:
 python.exe -m pip install --upgrade pip
-```
-
-Atualizar os pacotes `setuptools` e `wheel`:
-
-```
 pip install --upgrade setuptools wheel
-```
 
-Em seguida, executar novamente:
-
-```
+Em seguida, execute novamente:
 pip install -r requirements.txt
-```
 
-Caso ocorra erro de permissão no Windows
-
-Executar o seguinte comando no PowerShell:
-
-```
+Caso ocorra erro de permissão no Windows, deve-se executar o seguinte comando no PowerShell:
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-```
 
-Caso a instalação pelo `requirements.txt` continue apresentando falhas
-
-Instalar as dependências manualmente:
-
-```
+Caso a instalação pelo `requirements.txt` continue apresentando falhas, instale manualmente:
 pip install fastapi uvicorn ultralytics python-multipart opencv-python-headless pydantic
-```
 
-Criar e configurar o arquivo `.env`
 
-Preencher o arquivo `.env` com as credenciais:
-
-```
+Criar, configurar e preencher o arquivo `.env` com as credenciais:
 TWILIO_ACCOUNT_SID=
 TWILIO_AUTH_TOKEN=
 TWILIO_PHONE_FROM=whatsapp:+14155238886
 TWILIO_PHONE_TO=whatsapp:+00000000000
-```
 
 Copiar o arquivo de exemplo:
+cp .env.example .env        # preencha as credenciais Twilio
 
-```
-cp .env.example .env
-```
-
-Executar a aplicação
-
-```
+Executar a aplicação:
 uvicorn app.main:app --reload
-```
 ```
 Pode ser necessario instalar as seguintes bibliotecas.
 Caso precise forçar a instalação das bibliotecas do projeto, execute o comando abaixo no terminal:
