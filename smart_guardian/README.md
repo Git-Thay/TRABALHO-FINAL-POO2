@@ -42,81 +42,33 @@ smart_guardian
 
 ## Como rodar
 
-# Como executar o projeto
-
-## 1. Criar o ambiente virtual
-
 ```bash
+criar pasta venv 
 python -m venv .venv
-```
+ativar venv
+python -m venv .venv && source .venv/bin/activate   # Windows: .\.venv\Scripts\Activate.ps1
 
-## 2. Ativar o ambiente virtual
-**Windows (PowerShell)**
-
-```powershell
-.\.venv\Scripts\Activate.ps1
-```
-
-**Linux/macOS**
-
-```bash
-source .venv/bin/activate
-```
-
-## 3. Instalar as dependências
-```bash
+instalar pendencias
 pip install -r requirements.txt
-```
-
-## Caso ocorra algum erro
-
-Atualize o `pip` e as ferramentas de instalação:
-```bash
-python -m pip install --upgrade pip
+se der erro:
+python.exe -m pip install --upgrade pip
 pip install --upgrade setuptools wheel
-```
+e tentar novamente o requirements
 
-Depois, tente novamente:
-```bash
-pip install -r requirements.txt
-```
-
-Se houver erro de permissão no Windows:
-```powershell
+se der erro de permição do windows fazer colar isto no power shell 
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-```
 
-Se o `requirements.txt` continuar apresentando erro, instale as dependências manualmente:
-```bash
+se nao estiver aceitando mesmo assim o requirements tentar isto para instalar manualmente:
 pip install fastapi uvicorn ultralytics python-multipart opencv-python-headless pydantic
-```
 
-## 4. Configurar o arquivo `.env`
-Copie o arquivo de exemplo:
 
-**Linux/macOS**
-
-```bash
-cp .env.example .env
-```
-
-**Windows (PowerShell)**
-
-```powershell
-Copy-Item .env.example .env
-```
-
-Preencha o `.env` com as credenciais:
-
-```env
+criar env com credenciais
 TWILIO_ACCOUNT_SID=
 TWILIO_AUTH_TOKEN=
 TWILIO_PHONE_FROM=whatsapp:+14155238886
 TWILIO_PHONE_TO=whatsapp:+00000000000
-```
 
-## 5. Executar o projeto
-```bash
+cp .env.example .env        # preencha as credenciais Twilio
 uvicorn app.main:app --reload
 ```
 Pode ser necessario instalar as seguintes bibliotecas.
