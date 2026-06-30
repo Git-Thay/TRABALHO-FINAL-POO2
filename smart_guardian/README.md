@@ -44,24 +44,23 @@ smart_guardian
 
 ```bash
 criar pasta venv 
-`python -m venv .venv`
-
+python -m venv .venv
 ativar venv
-`python -m venv .venv && source .venv/bin/activate   # Windows: .\.venv\Scripts\Activate.ps1`
+python -m venv .venv && source .venv/bin/activate   # Windows: .\.venv\Scripts\Activate.ps1
 
 instalar pendencias
-`pip install -r requirements.txt`
-
+pip install -r requirements.txt
 se der erro:
-`python.exe -m pip install --upgrade pip`
-`pip install --upgrade setuptools wheel`
+python.exe -m pip install --upgrade pip
+pip install --upgrade setuptools wheel
 e tentar novamente o requirements
 
 se der erro de permição do windows fazer colar isto no power shell 
-`Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 se nao estiver aceitando mesmo assim o requirements tentar isto para instalar manualmente:
-`pip install fastapi uvicorn ultralytics python-multipart opencv-python-headless pydantic`
+pip install fastapi uvicorn ultralytics python-multipart opencv-python-headless pydantic
+
 
 criar env com credenciais
 TWILIO_ACCOUNT_SID=
