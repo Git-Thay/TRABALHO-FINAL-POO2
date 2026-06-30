@@ -18,18 +18,26 @@ Projeto pensado como exercício de **POO 2**: encapsulamento (entidade `Contato`
 ## Estrutura
 
 ```
-app/
-  api/rotas.py            # endpoints REST + webhook Twilio
-  dominio/
-    contato.py            # entidade + enums (NivelAlerta, StatusContato)
-    repositorio.py        # repositório em memória (trocável)
-    gerenciador.py        # estado de emergência + escada via APScheduler
-  servicos/whatsapp.py    # Strategy: WhatsAppTwilio / WhatsAppFake
-  ia/detector_yolo.py     # wrapper Ultralytics YOLO
-  config.py               # Settings via pydantic-settings
-  main.py                 # wiring (DI) + criar_app()
-modelos/                  # coloque aqui seu best.pt
-tests/                    # pytest
+smart_guardian
+ ┣ app
+ ┃ ┣ api
+ ┃ ┃ ┗ rotas.py            # Endpoints HTTP da API e recebimento do WhatsApp
+ ┃ ┣ dominio
+ ┃ ┃ ┣ contato.py          # Definição do responsável e seus enums de alerta
+ ┃ ┃ ┣ gerenciador.py      # Lógica central da emergência e tempo de alertas
+ ┃ ┃ ┗ repositorio.py      # Armazenamento e gerenciamento dos contatos salvos
+ ┃ ┣ ia
+ ┃ ┃ ┗ detector_yolo.py    # Integração e execução do modelo de IA YOLO
+ ┃ ┣ servicos
+ ┃ ┃ ┗ whatsapp.py         # Envio das mensagens (API Twilio ou Simulador)
+ ┃ ┣ static
+ ┃ ┃ ┗ index.html          # Interface visual do painel de monitoramento
+ ┃ ┣ config.py             # Configurações gerais e variáveis de ambiente
+ ┃ ┗ main.py               # Inicialização do app e amarração de dependências
+ ┣ modelos
+ ┃ ┗ best.pt               # Arquivo com os pesos treinados da IA
+ ┣ tests
+ ┃ ┗ test_gerenciador.py   # Testes automatizados das regras de negócio
 ```
 
 ## Como rodar
