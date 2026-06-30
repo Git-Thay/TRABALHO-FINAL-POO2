@@ -43,6 +43,7 @@ smart_guardian
 ## Como rodar
 
 ```bash
+
 Criar o ambiente virtual:
 python -m venv .venv
 
