@@ -71,7 +71,7 @@ TWILIO_PHONE_TO=whatsapp:+00000000000
 cp .env.example .env        # preencha as credenciais Twilio
 uvicorn app.main:app --reload
 ```
-pode ser necessario instalar as seguintes bibliotecas
+Pode ser necessario instalar as seguintes bibliotecas.
 Caso precise forçar a instalação das bibliotecas do projeto, execute o comando abaixo no terminal:
 
 `pip install fastapi uvicorn ultralytics python-multipart opencv-python-headless pydantic pydantic-settings python-dotenv apscheduler twilio requests pillow`
